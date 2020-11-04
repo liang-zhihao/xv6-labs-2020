@@ -1,0 +1,71 @@
+{
+    "files.defaultLanguage": "cpp", // ctrl+N新建文件后默认的语言
+    "editor.formatOnType": true, // （对于C/C++）输入分号后自动格式化当前这一行的代码
+    "editor.suggest.snippetsPreventQuickSuggestions": false, // clangd的snippets有很多的跳转点，不用这个就必须手动触发Intellisense了
+    "editor.acceptSuggestionOnEnter": "off", // 我个人的习惯，按回车时一定是真正的换行，只有tab才会接受Intellisense
+    // "editor.snippetSuggestions": "top", // （可选）snippets显示在补全列表顶端，默认是inline
+    // 在终端中运行编译命令，否则我们无法与程序通过标准输入交互
+    "code-runner.runInTerminal": true,
+
+
+    "code-runner.clearPreviousOutput": true,
+
+    "code-runner.fileDirectoryAsCwd": true,
+
+    "code-runner.executorMap": {
+        "c": "gcc $fileName -o build/$fileNameWithoutExt && .\\build\\$fileNameWithoutExt",
+        "cpp": "g++ $fileName -o build/$fileNameWithoutExt && .\\build\\$fileNameWithoutExt",
+    },
+
+    "code-runner.preserveFocus": false,
+
+    "code-runner.saveFileBeforeRun": true,
+    "files.associations": {
+        "iostream": "cpp",
+        "xstring": "cpp",
+        "string_view": "cpp",
+        "new": "cpp",
+        "xlocale": "cpp",
+        "*.tcc": "cpp",
+        "ostream": "cpp",
+        "array": "cpp",
+        "initializer_list": "cpp",
+        "utility": "cpp",
+        "atomic": "cpp",
+        "bit": "cpp",
+        "cctype": "cpp",
+        "clocale": "cpp",
+        "cmath": "cpp",
+        "cstdarg": "cpp",
+        "cstddef": "cpp",
+        "cstdint": "cpp",
+        "cstdio": "cpp",
+        "cstdlib": "cpp",
+        "cwchar": "cpp",
+        "cwctype": "cpp",
+        "deque": "cpp",
+        "unordered_map": "cpp",
+        "vector": "cpp",
+        "exception": "cpp",
+        "algorithm": "cpp",
+        "functional": "cpp",
+        "iterator": "cpp",
+        "memory": "cpp",
+        "memory_resource": "cpp",
+        "numeric": "cpp",
+        "optional": "cpp",
+        "random": "cpp",
+        "string": "cpp",
+        "system_error": "cpp",
+        "tuple": "cpp",
+        "type_traits": "cpp",
+        "fstream": "cpp",
+        "iosfwd": "cpp",
+        "istream": "cpp",
+        "limits": "cpp",
+        "sstream": "cpp",
+        "stdexcept": "cpp",
+        "streambuf": "cpp",
+        "typeinfo": "cpp"
+    },
+}
