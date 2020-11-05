@@ -153,6 +153,7 @@ UPROGS=\
 	$U/_echo2\
 	$U/_sleep\
 	$U/_pingpong\
+	$U/_primes\
 
 ifeq ($(LAB),syscall)
 UPROGS += \
