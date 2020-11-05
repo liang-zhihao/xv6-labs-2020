@@ -1,6 +1,7 @@
 #include "kernel/types.h"
 #include "kernel/stat.h"
 #include "user/user.h"
+#define INTSIZ 4
 /*
 
 Be careful to close file descriptors that a process doesn't need, because otherwise your program will run xv6 out of resources before the first process reaches 35.
@@ -21,14 +22,14 @@ void fun(int pParent[])
 
     int rBuf;
     int toNext[2];
-    if (read(pParent[0], &rBuf, 4) == 0)
+    if (read(pParent[0], &rBuf, INTSIZ) == 0)
     {
         return;
     }
     printf("prime %d\n", rBuf);
     int q = rBuf;
     pipe(toNext);
-    while (read(pParent[0], &rBuf, 4) != 0)
+    while (read(pParent[0], &rBuf, INTSIZ) != 0)
     {
 
         int n = rBuf;
@@ -36,7 +37,7 @@ void fun(int pParent[])
         if (n % q != 0)
         {
             // printf("n/q %d\n", n);
-            write(toNext[1], &n, 4);
+            write(toNext[1], &n, INTSIZ);
         }
     }
     close(toNext[1]);
@@ -54,7 +55,7 @@ int main(int argc, char *argv[])
     pipe(pParent);
     for (int i = 2; i <= 35; i++)
     {
-        write(pParent[1], &i, 4);
+        write(pParent[1], &i, INTSIZ);
     }
     close(pParent[1]);
     fun(pParent);
