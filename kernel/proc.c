@@ -66,6 +66,7 @@ mycpu(void) {
 // Return the current struct proc *, or zero if none.
 struct proc*
 myproc(void) {
+  // add lock ?
   push_off();
   struct cpu *c = mycpu();
   struct proc *p = c->proc;

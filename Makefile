@@ -150,7 +150,6 @@ UPROGS=\
 	$U/_grind\
 	$U/_wc\
 	$U/_zombie\
-	$U/_echo2\
 	$U/_sleep\
 	$U/_pingpong\
 	$U/_primes\

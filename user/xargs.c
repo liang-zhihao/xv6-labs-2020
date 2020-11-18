@@ -25,14 +25,12 @@ char **readFromLine()
     int size = 0;
     while (read(0, &t, sizeof(t)) != 0)
     {
-        // printf("%c", t);
         if (t == '\n')
         {
             // printf("34: %s\n", str);
-            // allocate mem to pointer ! important
+            // allocate mem to pointer (important)
             args[size] = (char *)malloc(sizeof(str));
             strcpy(args[size++], str);
-            // printf("36: %s\n", args[size - 1]);
             memset(str, 0, sizeof(str));
             length = 0;
         }
@@ -59,10 +57,6 @@ int main(int argc, char *argv[])
         args[ind++] = argsFromLines[i];
     }
 
-    // for (int i = 0; i < ind; i++)
-    // {
-    //     printf("64: %s\n", args[i]);
-    // }
 
     if (argc >= 2)
     {
